@@ -1,13 +1,299 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+/*Navigation Bar*/
+.navbar ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #00aeff;
+  width: 100%;
+}
+.navbar li{
+  float: left;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.navbar a {
+  display: block;
+  color: #000000;
+  font-size: large;
+  font-weight: 300;
+  text-align: center;
+  padding: 18px 20px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: #287aff;
+}
+/*Basecontainer*/
+.basecontainer {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+/*Minicards*/
+.addForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 20px;
+  padding: 0;
+}
+
+.formbox input{
+  width: 100%; 
+  padding: 12px;
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  box-sizing: border-box; 
+  margin-top: 6px; 
+  margin-bottom: 16px;
+}
+.formbox button{
+  width: 100%;
+  padding: 12px;
+  border-radius: 5px;
+  border: 0;
+  color: rgb(72, 72, 72);
+  background-color: #00aeff;
+}
+.formbox button:hover{
+  background-color: #287aff;
+}
+.formbox button:active{
+  background-color: #1e60cb;
+}
+.termList div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 20px;
+  padding: 0;
+}
+.termList ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background-color: white;
+}
+.termList li{
+  border: #ccc solid 1px;
+  border-radius: 5px;
+  margin: 10px;
+  background-color: rgb(137, 221, 249);
+  float: none;
+}
+.termList button {
+  color: white;
+  background-color: rgb(12, 0, 87);
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+}
+.termList button:hover{
+  background-color: #1e60cb;
+}
+
+/*styles for wordlist*/
+.wordblock div{
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  box-sizing: border-box; 
+  overflow-x: scroll;
+}
+.wordblock h4{
+  width: 100%;
+  margin-left: 10px;
+}
+.wordblock p{
+  width: 100%;
+}
+/*Flashcards*/
+.flashcards{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  box-sizing: border-box; 
+  overflow-x: scroll;
+  margin-top: 40px;
+}
+.flashcard {
+  width: 800px;
+  height: 500px;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightblue;
+  border-radius: 20px;
+  font-size: 30px;
+  font-weight: bold;
+}
+.flashcardbox {
+  width: 80%;
+}
+.fcbuttonbox{
+  display: inline-block;
+}
+.flashcards button{
+  margin: 15px 5px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: #00aeff;
+}
+.flashcards button:hover{
+  background-color: #1e60cb;
+}
+.flashcards button:active{
+  background-color: #1e60cb;
+}
+.flashcards button:disabled{
+  background-color: #ccc;
+}
+
+/*media for smaller cards*/
+@media screen and (max-width: 800px) {
+  .flashcard {
+      width: 400px;
+      height: 300px;
+      font-size: 20px;
+  }
+}
+
+/*matching cards*/
+.matchingcontainer{
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.cardscontainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-content: center;
+  align-items: center;
+}
+.matchingcontainer button{
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: #00aeff;
+}
+.matchingcontainer button:hover{
+  background-color: #1e60cb;
+}
+.matchingcontainer button:active{
+  background-color: #1e60cb;
+}
+.matchingcontainer button:disabled{
+  background-color: #ccc;
+}
+
+.card {
+  width: 180px;
+  height: 100px;
+  padding: 0;
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(137, 221, 249);
+  border: #585757 solid 1px;
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  box-sizing: border-box; 
+  overflow-x: scroll;
+}
+.cardactive {
+  width: 180px;
+  height: 100px;
+  padding: 0;
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(137, 221, 249);
+  border: #1700c5 solid 3px;
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  box-sizing: border-box; 
+  overflow-x: scroll;
+}
+.card p{
+  width: 90%;
+  margin: auto;
+}
+.cardactive p{
+  width: 90%;
+  margin: auto;
+}
+.gameover {
+  font-size: 150px;
+  text-align: center;
+}
+.correct {
+  color: green;
+  font-weight: bold;
+}
+.incorrect {
+  color: red;
+  font-weight: bold;
+}
+
+/*grid media*/
+@media screen and (max-width: 750px) {
+  .cardscontainer {
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+  .card {
+      width: 100px;
+      height: 80px;
+      font-size: 12px;
+  }
+  .cardactive {
+      width: 100px;
+      height: 80px;
+      font-size: 12px;
+  }
+  .matchingcontainer {
+      width: 95%;
+  }
+  .gameover {
+      font-size: 100px;
+  }
 }

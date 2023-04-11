@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Flashcards from "./pages/flashcards";
+import Matching from "./pages/matching";
+import Home from "./pages/home";
+import { Navbar } from "./components/navbar";
+import { useState } from "react";
 
 function App() {
+  const [entries, setEntries] = useState([]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+				<Routes>
+					<Route path="/" element ={<Navbar/>}>
+						<Route index element={<Home entries={entries} setEntries={setEntries}/>}/>
+						<Route path="Flashcards" element={<Flashcards entries={entries} setEntries={setEntries}/>} />
+						<Route path="Matching" element={<Matching entries={entries}/>}/>
+					</Route>
+				</Routes>
+			</BrowserRouter>
   );
 }
 
