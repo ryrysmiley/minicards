@@ -186,6 +186,13 @@ body {
       font-size: 20px;
   }
 }
+@media screen and (max-width: 700px) {
+  .flashcard {
+      width: 300px;
+      height: 200px;
+      font-size: 15px;
+  }
+}
 
 /*matching cards*/
 .matchingcontainer{
